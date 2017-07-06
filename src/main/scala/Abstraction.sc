@@ -20,8 +20,11 @@ object FileMatcher {
 }
 
 FileMatcher.fileEndsWith("pdf")
+
 def containsNg(nums: List[Int]): Boolean = nums.exists(_ < 0)
+
 containsNg(List(1, 2, 3, 4))
+
 /* Currying */
 def simpleFunc(a: Int, b: Int): Int = a + b
 
@@ -57,7 +60,6 @@ def writeOnFile(file: File, writer: PrintWriter => Unit) = {
 writeOnFile(new File("/home/asteroid-m/test"), writer => writer.println("let's start here "))
 
 /*By Name Parameter */
-
 
 def myAssert(predicate: => Boolean) = {
 

@@ -55,3 +55,23 @@ def writeOnFile(file: File, writer: PrintWriter => Unit) = {
 }
 
 writeOnFile(new File("/home/asteroid-m/test"), writer => writer.println("let's start here "))
+
+/*By Name Parameter */
+
+
+def myAssert(predicate: => Boolean) = {
+
+  if (predicate) println("Done")
+}
+
+myAssert(5 > 3) /*in this case 5 > 3 is not evaluated before call
+                  instead a function value is created whose
+                  apply method will evaluate 5>3*/
+
+//Simple
+
+def myAssertSimple(predicate: Boolean) = {
+  if (predicate) println("Done !!!")
+}
+
+myAssertSimple(5 > 3) //in this case value is evaluated before the call to function

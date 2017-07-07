@@ -1,5 +1,8 @@
+import jdk.internal.util.xml.impl.Input
+
 /*Abstract Class*/
-abstract class Element {  //implicitly extends class AnyRef
+abstract class Element {
+  //implicitly extends class AnyRef
   def content: Array[String] //declares the method content but does not define it
 
   def height: Int = content.length
@@ -41,3 +44,23 @@ members of class Element
 the type Element
  */
 
+/*
+Remove "code smell"
+Parametric Field:- combining parameter and the field in single definition
+*/
+
+class ArrayElement1(input: Array[String]) extends Element {
+
+  val content = input
+}
+
+class Cat {
+
+  val isDangerous = false
+}
+
+class Tiger(input1: Boolean, input2: Int) extends Cat {
+
+  override val isDangerous = input1
+  val age: Int = input2
+}

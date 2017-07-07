@@ -50,17 +50,14 @@ Parametric Field:- combining parameter and the field in single definition
 */
 
 class ArrayElement1(input: Array[String]) extends Element {
-
   val content = input
 }
 
 class Cat {
-
   val isDangerous = false
 }
 
 class Tiger(input1: Boolean, input2: Int) extends Cat {
-
   override val isDangerous = input1
   val age: Int = input2
 }
